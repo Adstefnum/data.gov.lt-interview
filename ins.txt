@@ -1,0 +1,64 @@
+For a Python specialist
+
+I am writing to you because you responded to the advertisement and declare that you have Python programming skills.
+
+We need a specialist who can effectively participate in programming related to Open Data [1] and Storage [2] projects. Django, asyncio, PostgreSQL, Linux, Docker are used. It may be necessary not only to program, but also to administer servers.
+
+The main motivation would be that the work has a great meaning and its results in one way or another contribute to a better and more comfortable life for all people. If you want to do something meaningful in your life, I think this job is one of the best options. Also, there is not only a great opportunity here, but also a situation that forces continuous improvement, because it is necessary to make a breakthrough in the field of open and common data exchange of the whole country and digitization of the state. Salary from €1,500/month. in hand, and more depending on experience and skills. Work in the public sector, but in a very progressive and friendly team.
+[1] https://lnkd.in/emNjNPhX
+[2] https://lnkd.in/ehcSTu8W
+
+Write if you are interested and/or if you have any questions?
+
+In addition, and if you are interested, we suggest that you familiarize yourself with the specifics of the tasks solved in the project by completing the task described below:
+
+Make a command-line program using the Python programming language that reads the following table:
+
+database | table | column | type | title
+DB | | Database house
+          | TBL | | Table house
+          | | COL1 | integer | Column 1
+          | | COL2 | string | Column 2
+
+In a table, the first three columns of database and table can be combined, the database column always includes three columns, the table column always includes two columns. All other columns cannot be combined. The table will always have 5 columns. Space characters at the beginning and end of each cell should be ignored and removed during reading. The table contains the data in a hierarchical form, where COL1 and COL2 belong to the table TBL, and the table TBL itself belongs to the database DB. A table can contain any number of databases, tables and columns.
+
+The task is to read the following table by saving the read data to the following classes:
+
+class Node:
+     in the house: art
+     title: art
+
+class Database(Node):
+     pass
+
+class Table(Node):
+     pass
+
+class DataType:
+     in the house: art
+
+class Column(Node):
+     dtype: DataType
+
+class Integer(DataType):
+     pass
+
+class String(DataType):
+     pass
+
+When reading data, the attributes of the above classes are populated using the multipledispatch library, calling the load function, with the corresponding empty instance of the class and the single row data of the read table.
+
+Finally, after reading the data, the command-line tool outputs the same table, only the table columns must be sized to fit the text in the cells.
+
+The implemented application must be covered by tests using the pytest testing tool.
+
+Write if you have any questions and how did you manage to complete the task?
+
+Thanks in advance and I will wait for your reply by February 9th!
+
+Sincerely,
+Julius Belick
+Mentor
+Open Data Project Manager
+Digital environment department
+Tel. +370 618 72994; email Mr. julius.belickas@ivpk.lt https://data.gov.lt/

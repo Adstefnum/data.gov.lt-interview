@@ -36,7 +36,13 @@ DB2      |       |        |          | Database 2
          |       | COL2   | integer  | Zip code
 
 
-In a table, the first three columns of database and table can be combined, the database column always includes three columns, the table column always includes two columns. All other columns cannot be combined. The table will always have 5 columns. Space characters at the beginning and end of each cell should be ignored and removed during reading. The table contains the data in a hierarchical form, where COL1 and COL2 belong to the table TBL, and the table TBL itself belongs to the database DB. A table can contain any number of databases, tables and columns.
+In a table, the first three columns of database and table can be combined, the database column always includes three columns, the table column always includes two columns. All other columns cannot be combined. The table will always have 5 columns.
+
+ Space characters at the beginning and end of each cell should be ignored and removed during reading. 
+ 
+ The table contains the data in a hierarchical form, where COL1 and COL2 belong to the table TBL, and the table TBL itself belongs to the database DB.
+ 
+A table can contain any number of databases, tables and columns.
 
 The task is to read the following table by saving the read data to the following classes:
 

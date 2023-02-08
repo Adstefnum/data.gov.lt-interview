@@ -9,6 +9,7 @@ class Node:
 class Database(Node):
      pass
 
+@dataclass
 class Table(Node):
      pass
 

@@ -1,5 +1,5 @@
-from load_data_into_classes import load_data
-from tables_classes import Database, Column, Table
+from .load_data_into_classes import load_data
+from .tables_classes import Database, Column, Table
 from prettytable import PrettyTable
 
 def read_data_into_printable_format(table_data):

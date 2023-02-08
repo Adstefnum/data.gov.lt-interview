@@ -1,4 +1,3 @@
-import pytest
 from src.modules.tables_classes import Database, Table, Column, Integer, String
 from src.modules.load_data_into_classes import load_data, load_node_data
 

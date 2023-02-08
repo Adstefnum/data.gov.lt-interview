@@ -1,5 +1,5 @@
 from multipledispatch import dispatch
-from tables_classes import Node, Database, Column, Table, Integer, String
+from tables_classes import Database, Column, Table, Integer, String
 
 def load_node_data(class_instance, row):
     title = row[4].strip()

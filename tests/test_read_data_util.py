@@ -2,8 +2,8 @@ from src.modules.read_and_print_data_utils import read_data_into_printable_forma
 from src.modules.tables_classes import Database, Table, Column, Integer, String
 import pytest
 
-def test_read_data_into_printable_format():
-    pass
+
+
 
 @pytest.mark.parametrize("get_data", ["small"], indirect=True)
 def test_read_data_into_printable_format_with_small_data(get_data):
@@ -39,6 +39,7 @@ def test_read_data_into_printable_format_with_small_data(get_data):
     assert column.title == 'Column 1'
     assert isinstance(column.dtype, Integer)
 
+
 @pytest.mark.parametrize("get_data", ["large"], indirect=True)
 def test_read_data_into_printable_format_with_large_data(get_data):
     data = read_data_into_printable_format(get_data)
@@ -56,7 +57,6 @@ def test_read_data_into_printable_format_with_large_data(get_data):
     assert table1.name == 'TBL'
     assert table1.title == 'TBL 1'
 
-
     # Assert that the first column has a name, a title, and a dtype
     columns1 = tables1[0][1]
     column1 = columns1[0]
@@ -70,7 +70,6 @@ def test_read_data_into_printable_format_with_large_data(get_data):
     assert database2.name == 'DB'
     assert database2.title == 'DB 2'
 
-
     tables2 = data[1][1:]
     # Assert that the first and second tables has a name and a title
     table1 = tables2[0][0]
@@ -82,14 +81,29 @@ def test_read_data_into_printable_format_with_large_data(get_data):
     assert isinstance(table2, Table)
     assert table2.name == 'TBL'
     assert table2.title == 'TBL 3'
- 
 
+
+def test_read_data_into_printable_format_continue_statement():
+    table_data = [
+        ["db 1", "", "", "","Database 1"],
+        ["", "", "", "",""]
+    ]
+
+    result = read_data_into_printable_format(table_data)
+
+    # Verify that the continue statement was executed
+    assert result == [
+        [Database("db 1","Database 1")]
+
+
+    ]
 
 
 @pytest.mark.parametrize('get_data', ['small', 'large'], indirect=True)
 def test_read_data_into_printable_format_output(get_data):
     data = read_data_into_printable_format(get_data)
     assert isinstance(data, list)
+
 
 @pytest.mark.parametrize('get_data', ['small', 'large'], indirect=True)
 def test_read_data_into_printable_format_database_count(get_data):
@@ -99,6 +113,7 @@ def test_read_data_into_printable_format_database_count(get_data):
     elif get_data == 'large':
         assert len(data) == 2
 
+
 @pytest.mark.parametrize('get_data', ['small', 'large'], indirect=True)
 def test_read_data_into_printable_format_table_count(get_data):
     data = read_data_into_printable_format(get_data)
@@ -107,6 +122,7 @@ def test_read_data_into_printable_format_table_count(get_data):
     elif get_data == 'large':
         assert len(data[0]) == 2
         assert len(data[1]) == 3
+
 
 @pytest.mark.parametrize('get_data', ['small', 'large'], indirect=True)
 def test_read_data_into_printable_format_column_count(get_data):
@@ -119,4 +135,3 @@ def test_read_data_into_printable_format_column_count(get_data):
         assert len(data[1][1][1]) == 2
         assert len(data[1][2][1]) == 2
         assert len(data[1][3][1]) == 1
-

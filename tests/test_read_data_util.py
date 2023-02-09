@@ -1,5 +1,5 @@
 from src.modules.read_and_print_data_utils import read_data_into_printable_format
-from src.modules.tables_classes import Database, Table, Column, Integer, String
+from src.modules.tables_classes import Database, Table, Column, Integer
 import pytest
 
 
